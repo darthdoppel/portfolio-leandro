@@ -4,6 +4,20 @@ import Navbar from "@components/general/Navbar.astro";
 import "../styles/style.css";
 ---
 
+<html>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R39J2NGD2X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-R39J2NGD2X');
+    </script>
+  </head>
+</html>
+
 <Navbar />
 <main class="container">
   <slot />
