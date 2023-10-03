@@ -26,6 +26,7 @@ import { createLogo } from "@utils";
           aria-label="theme-button"
           id="theme-button"
           class="dark:text-light rounded-lg p-4 ml-2 bg-slate-100 dark:bg-[#202020]"
+          transition:persist="true"
         ></button>
       </li>
     </ul>
@@ -38,28 +39,37 @@ import { createLogo } from "@utils";
   const themeButton = document.getElementById("theme-button");
   const browserTheme = document.querySelector('[name="theme-color"]');
   let isDark;
-  const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  })();
 
-  if (theme === "light") {
-    document.documentElement.setAttribute("data-theme", "light");
-    isDark = true;
-    themeButton.innerHTML = moon;
-    browserTheme.content = "#FFFFFF";
-  } else {
-    document.documentElement.setAttribute("data-theme", "dark");
-    isDark = false;
-    themeButton.innerHTML = sun;
-    browserTheme.content = "#111111";
-  }
-  window.localStorage.setItem("theme", theme);
+  const setTheme = () => {
+    const theme = (() => {
+      if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+        return localStorage.getItem("theme");
+      }
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+      return "light";
+    })();
+
+    if (theme === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+      isDark = true;
+      themeButton.innerHTML = moon;
+      browserTheme.content = "#FFFFFF";
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+      isDark = false;
+      themeButton.innerHTML = sun;
+      browserTheme.content = "#111111";
+    }
+    window.localStorage.setItem("theme", theme);
+  };
+
+  // Ejecutar en la carga de la página
+  setTheme();
+
+  // Ejecutar después de una transición de vista
+  document.addEventListener('astro:after-swap', setTheme);
 
   const darkModeHandler = () => {
     if (isDark) {
@@ -79,3 +89,4 @@ import { createLogo } from "@utils";
 
   themeButton.addEventListener("click", darkModeHandler);
 </script>
+

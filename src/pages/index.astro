@@ -1,6 +1,6 @@
 ---
 import { info } from "@data";
-
+import { ViewTransitions } from 'astro:transitions';
 import Layout from "@layouts/Layout.astro";
 import Hero from "@components/home/Hero.astro";
 import Experience from "@components/home/Experience.astro";
@@ -23,6 +23,7 @@ const featureProjects = info.projects.reduce((accumulator, project) => {
       description={info.about}
       ogImageUrl={"/assets/images/profile.png"}
     />
+    <ViewTransitions />
   </head>
 
   <body>

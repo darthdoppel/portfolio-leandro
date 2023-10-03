@@ -1,5 +1,7 @@
 ---
 import { info } from "@data";
+import { ViewTransitions } from 'astro:transitions';
+
 
 import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
 import MetaHead from "@components/general/MetaHead.astro";
@@ -16,6 +18,7 @@ const Projects = info.projects.map((project) => project);
       description={"All projects are available in this page."}
       ogImageUrl={"/assets/images/profile.png"}
     />
+    <ViewTransitions />
   </head>
 
   <body>
