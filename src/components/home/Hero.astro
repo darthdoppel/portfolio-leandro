@@ -5,8 +5,10 @@ const { name, about } = Astro.props as IHeroProps;
 ---
 
 <section>
-  <p class="dark:text-light mt-[117px]">Hey, I’m</p>
-  <h1 class="leading-normal">{name}</h1>
+  <h1 class="leading-normal -mb-2">{name}</h1>
+  <h2 class="text-xl md:text-2xl font-semibold text-blue-400 dark:text-yellow-100 mt-4 mb-2">
+    FullStack Developer
+  </h2>
   <p class="dark:text-light text-lg mb-16">
     {about}
   </p>

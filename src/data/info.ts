@@ -3,7 +3,7 @@ export const info = {
   name: "Leandro Magallanes",
   jobDescription: "Web Developer",
   about: `
-  and currently exploring opportunities as a Fullstack Developer, I have a strong inclination towards Backend development, while my skills in Frontend, enriched by libraries like NextUI and the use of TailwindCSS, ensure adaptability to a variety of project requirements. My tech journey involves self-learning and implementing technologies like JavaScript, React, TypeScript, NodeJS, MongoDB, and ExpressJS. My learning quest continues, leading to the successful completion of several independent web projects. I am passionate about devising solutions that address real-world problems, striving to make people’s work less repetitive and more focused on creating value.
+  My tech journey involves self-learning and implementing technologies like JavaScript, React, TypeScript, NestJS, MongoDB, SQL. Passionate devising solutions that address real-world problems, striving to make people’s work less repetitive and more focused on creating value.
   `,
 
   experience: [
